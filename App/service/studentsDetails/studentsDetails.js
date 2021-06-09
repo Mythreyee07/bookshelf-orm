@@ -2,7 +2,6 @@ const knex = require('../../util/database').knex;
 const Student = require('../../models/student');
 const bookshelf = require('bookshelf')(knex);
 
-
 class studentDetails 
 {
 
@@ -82,7 +81,7 @@ class studentDetails
   }
 
   //updating a student details
-  updatetudent(req,res)
+  updateStudent(req,res)
   {
     Student.forge({
       id: req.params.id,

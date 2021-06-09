@@ -1,28 +1,18 @@
-var express = require('express');
-var bodyParser = require('body-parser');
- 
-var { Validator, ValidationError } = require('express-json-validator-middleware');
- 
- 
-
-var validator = new Validator({allErrors: true}); 
- 
-
-var validate = validator.validate;
- 
 
 var StudentSchema = {
     type: 'object',
-    required: ['id', 'name', 'email'],
+    required: ['name', 'email'],
     properties: {
-        id: {
-            type: 'number'
-        },
+        
         name: {
-            type: 'string'
+            type: 'string',
+            minLength: 2,
+            maxLength: 20
         },
         email: {
             type: 'string',
+            minLength: 2,
+            maxLength: 16
             
         }
     }
